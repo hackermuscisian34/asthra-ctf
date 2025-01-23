@@ -1,7 +1,7 @@
 name: challenge0
 
 services:
-  web:
-    build: .
+  challenge0:
+    build: ./challenge0
     ports:
       - "3000:80"
