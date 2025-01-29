@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASTHRA - Puzzle Challenge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e2f;
+            color: #ffffff;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #00ff88;
+        }
+        form {
+            display: inline-block;
+            background-color: #2e2e3f;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            width: 300px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #00ff88;
+            color: #1e1e2f;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #00cc66;
+        }
+        .message {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .valid {
+            color: #00ff88;
+        }
+        .invalid {
+            color: #ff4444;
+        }
+    </style>
+    <!-- Include external JavaScript file -->
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>ASTHRA - Puzzle Challenge</h1>
+    <form onsubmit="event.preventDefault(); submitText();">
+        <label for="text">Enter your solution to the puzzle:</label><br>
+        <input type="text" id="text" name="text" placeholder="Enter your answer here"><br><br>
+        <input type="submit" value="Submit">
+        <div id="message" class="message"></div>
+    </form>
+</body>
+</html>
