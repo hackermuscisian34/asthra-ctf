@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Asthra Music Festival Lineup</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 20px auto; padding: 20px; background-color: #f0f0f0; }
+        .band { background-color: white; padding: 15px; margin: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .stars::after { content: attr(data-stars); color: #ffd700; }
+        .top-band { background-color: #ffd700; border: 2px solid #ffd700; }
+        .hidden-content { display: none; }
+        /* Festival theme */
+        .theme-data { display: none; }
+        #theme-2025 { content: "5F5374347243683473337222"; }
+    </style>
+</head>
+<body>
+    <h1>Asthra Music Festival Lineup</h1>
+    <p>Bands ranked by fan ratings (highest to lowest):</p>
+    <div id="bandList"></div>
+    <div class="hidden-content" id="_0x7f3a2"></div>
+    <!-- Theme selector contains part of the key -->
+    <select id="theme-selector" style="display:none">
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+        <!-- Hidden verification part -->
+        <option value="72" style="display:none">Hidden Theme</option>
+    </select>
+    <script>
+        // Complex band data structure
+        const _0x3e2b = [
+            { id: btoa('NW'), n: btoa('The Neon Waves'), r: parseFloat(btoa('NC44')) },
+            { id: btoa('ME'), n: btoa('Midnight Echo'), r: parseFloat(btoa('NC41')) },
+            { id: btoa('AS'), n: btoa('Asthra'), r: parseFloat(btoa('Mi41')) }
+        ];
+
+        // Verify integrity
+        function verifyIntegrity(data) {
+            const parts = {
+                name: '4354467B417374687261',  
+                name: '5F5374347243683473337222' 
+            };
+            return parts;
+        }
+
+        function _0x5e3f() {
+            const bandList = document.getElementById('bandList');
+            bandList.innerHTML = '';
+
+            const bands = _0x3e2b.map(b => ({
+                id: atob(b.id),
+                name: atob(b.n),
+                rating: Number(atob(b.r.toString()))
+            })).sort((a, b) => b.rating - a.rating);
+
+            bands.forEach((band, idx) => {
+                const bandDiv = document.createElement('div');
+                bandDiv.className = 'band' + (idx === 0 ? ' top-band' : '');
+                const stars = '★'.repeat(Math.floor(band.rating)) + '☆'.repeat(5 - Math.floor(band.rating));
+                bandDiv.innerHTML = `
+                    <h3>${band.name}</h3>
+                    <div class="stars" data-stars=" ${stars}">
+                        Current rating: ${band.rating.toFixed(1)}/5.0
+                    </div>
+                `;
+                bandList.appendChild(bandDiv);
+            });
+        }
+
+        // Initialize
+        setTimeout(_0x5e3f, 100);
+    </script>
+</body>
+</html>
